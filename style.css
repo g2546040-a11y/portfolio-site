@@ -1,0 +1,293 @@
+.about-profile{
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.about-photo{
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.about-info h3{
+    margin: 0;
+    font-size: 22px;
+}
+
+.about-role{
+    opacity: 0.8;
+    margin: 6px 0 12px;
+}
+
+.about-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-list li{
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+body{
+    background: #000;
+    color: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    padding: 10px 30px;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    top: 0;
+    z-index: 10;
+}
+
+nav{
+    display: flex;
+    gap: 20px;
+}
+
+*{box-sizing: border-box;}
+
+section{
+    padding: 10px 30px;
+}
+
+footer{
+    padding: 20px 30px;
+    font-size: 11px;
+}
+
+nav a:hover{
+    color: rgb(117, 252, 107);
+}
+
+/* TOP */
+#top{
+    padding-top: 120px;
+    text-align: center;
+}
+
+#top img{
+    width: 60%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+#weather-icon{
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+/* WORKS GRID */
+#works-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+/* CARD */
+.work-card{
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.work-card img{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.95);
+    transition: filter 0.2s ease;
+}
+
+.work-card:hover img{
+    filter: brightness(1.05);
+}
+
+.work-card h4{
+    margin: 15px 15px 5px;
+}
+
+.work-card p{
+    margin: 0 15px 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.work-category{
+    font-size: 12px;
+    padding-top: 14px;
+    color: aqua;
+}
+
+.work-year{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* CONTROLS */
+.works-controls{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.works-controls select{
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+/* ------------------------------ */
+/* ここが重要：左右ボタンをPCでも有効にする */
+/* ------------------------------ */
+
+.slider-btn{
+    z-index: 5;
+}
+
+.slider{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-main{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+.slider-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+    transition: all 0.25s ease;
+}
+
+/* 左矢印 */
+.slider-btn.prev{
+    left: 10px;
+}
+
+/* 右矢印 */
+.slider-btn.next{
+    right: 10px;
+}
+
+/* ------------------------------ */
+/* overlay & expanded */
+/* ------------------------------ */
+
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 90;
+}
+
+.work-card.expanded{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    width: 80%;
+    max-width: 600px;
+    z-index: 100;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    background: #111;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* ------------------------------ */
+/* スマホ用（必要なものだけ） */
+/* ------------------------------ */
+
+@media screen and (max-width: 600px){
+    #top{
+        padding-top: 80px;
+    }
+
+    #top img{
+        width: 100%;
+    }
+
+    #works-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .works-controls{
+        flex-direction: column;
+    }
+
+    #weather-icon{
+        font-size: 48px;
+        margin-top: 20px;
+        text-shadow: 0 0 12px rgba(255,255,255,0.3);
+    }
+
+    .work-card{
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    }
+
+    .work-card:active{
+        transform: scale(1.03);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+        filter: brightness(1.1);
+    }
+}

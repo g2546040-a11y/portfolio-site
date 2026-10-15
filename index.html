@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Daiki Kondo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#top">Daiki Kondo</a>
+        <nav>
+            <a href="#About">About</a>
+            <a href="#Country">Country</a>
+        </nav>
+    </header>
+    <main>
+        <section id="top">
+            <img src="./media/IMG_4267.jpg" width=100%>
+            <h1>
+                Personal Portfolio
+            </h1>
+            <p id="weather-icon"> </p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+
+            <div class="about-profile">
+                <img src="./media/IMG_8658.jpg" alt="Profile" class="about-photo">
+
+                <div class="about-info">
+                    <h3>Daiki Kondo</h3>
+
+                    <ul class="about-list">
+                        <li>🎂 Age: 19</li>
+                        <li>📍 Tokyo, Japan</li>
+                        <li>🍣 Omotesando Sushi (2025–)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="Country" class="works">
+            <h3>Country</h3>
+            <div class="works-controls">
+                <select id="category">
+                    <option value="all">すべてのカテゴリ</option>
+                </select>
+                <select id="sort">
+                    <option value="new">新しい順</option>
+                    <option value="old">古い順</option>
+                    <option value="title">タイトル順</option>
+                </select>
+            </div>
+            <div id="works-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <span>© 2026 Daiki Kondo</span>
+    </footer>
+    <script src="works.js"></script>
+
+    <div id="overlay"></div>
+
+</body>
+
+</html>
